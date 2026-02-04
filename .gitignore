@@ -7,3 +7,9 @@ node_modules/
 Thumbs.db
 
 CLAUDE.md
+
+package-lock.json
+
+yarn.lock
+
+.vscode
