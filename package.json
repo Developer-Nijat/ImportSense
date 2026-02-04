@@ -2,7 +2,7 @@
   "name": "importsense",
   "displayName": "ImportSense",
   "description": "Semantically sort import statements in JavaScript/TypeScript projects",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "aliyevdev",
   "repository": {
     "type": "git",
