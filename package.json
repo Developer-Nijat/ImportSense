@@ -4,6 +4,10 @@
   "description": "Semantically sort import statements in JavaScript/TypeScript projects",
   "version": "1.0.0",
   "publisher": "aliyevdev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Developer-Nijat/ImportSense.git"
+  },
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.85.0"
@@ -53,5 +57,6 @@
   },
   "dependencies": {
     "@babel/parser": "^7.23.0"
-  }
+  },
+  "license": "MIT"
 }
