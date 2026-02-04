@@ -1,0 +1,57 @@
+{
+  "name": "importsense",
+  "displayName": "ImportSense",
+  "description": "Semantically sort import statements in JavaScript/TypeScript projects",
+  "version": "1.0.0",
+  "publisher": "aliyevdev",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Formatters",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "import",
+    "import order",
+    "import sorting",
+    "code style",
+    "sort",
+    "organize",
+    "typescript",
+    "javascript",
+    "react",
+    "nextjs",
+    "formatter"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "importsense.fixImportOrder",
+        "title": "ImportSense: Fix Import Order"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.23.0"
+  }
+}
