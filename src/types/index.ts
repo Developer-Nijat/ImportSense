@@ -20,6 +20,17 @@ export const GROUP_ORDER: ImportGroup[] = [
     ImportGroup.SIDE_EFFECTS
 ];
 
+export const GROUP_LABELS: Record<ImportGroup, string> = {
+    [ImportGroup.CORE]: 'Core',
+    [ImportGroup.THIRD_PARTY]: 'Third-party libraries',
+    [ImportGroup.INTERNAL]: 'Internal modules',
+    [ImportGroup.COMPONENTS]: 'Components',
+    [ImportGroup.UTILS]: 'Utils & Helpers',
+    [ImportGroup.CONSTANTS_TYPES]: 'Constants & Types',
+    [ImportGroup.ASSETS_STYLES]: 'Assets & Styles',
+    [ImportGroup.SIDE_EFFECTS]: 'Side effects'
+};
+
 export interface ParsedImport {
     source: string;
     rawStatement: string;

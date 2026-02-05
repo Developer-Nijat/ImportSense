@@ -1,4 +1,4 @@
-import { ParsedImport, ImportGroup, GROUP_ORDER } from '../types';
+import { ParsedImport, ImportGroup, GROUP_ORDER, GROUP_LABELS } from '../types';
 
 export function sortImports(imports: ParsedImport[]): ParsedImport[] {
     const grouped = groupImportsByCategory(imports);
@@ -72,16 +72,19 @@ export function generateSortedImportText(imports: ParsedImport[]): string {
     const sortedImports = sortImports(imports);
     const lines: string[] = [];
     let currentGroup: ImportGroup | null = null;
+    const groupsInUse = new Set(sortedImports.map(imp => imp.group));
+    const hasManyGroups = groupsInUse.size > 1;
 
     for (const imp of sortedImports) {
         if (currentGroup !== null && currentGroup !== imp.group) {
             lines.push('');
         }
-        
-        if (imp.leadingComments.length > 0) {
-            lines.push(...imp.leadingComments);
+
+        if (currentGroup !== imp.group && hasManyGroups) {
+            const label = GROUP_LABELS[imp.group];
+            lines.push(`// ${label}`);
         }
-        
+
         lines.push(imp.rawStatement);
         currentGroup = imp.group;
     }
